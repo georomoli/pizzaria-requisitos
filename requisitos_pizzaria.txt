@@ -1,0 +1,56 @@
+=== Regras de Negócio ===
+Identificador	Descrição
+RN01	E-mail do usuário deve ser único
+RN02	Senha deve ter no mínimo 8 caracteres e conter letras e números
+RN03	Login só é permitido com e-mail e senha válidos
+RN04	Rotas protegidas exigem token de autenticação válido
+RN05	Usuário só pode ver/alterar os próprios dados; admin pode ver todos
+RN06	Somente administrador pode cadastrar produtos
+RN07	Listagem por categoria exige categoria existente e retorna só produtos dessa categoria
+RN08	Somente administrador pode criar categorias; nome não pode se repetir
+RN09	Listar todas as categorias retorna categorias ativas, ordenadas por nome
+RN10	Um pedido é criado com status "ABERTO" e vinculado ao usuário criador
+RN11	Deletar pedido só é permitido se o status for "ABERTO" e o pedido for do próprio usuário
+RN12	Adicionar item só é permitido em pedidos "ABERTO"; item deve referenciar produto válido e quantidade > 0
+RN13	Remover item só é permitido em pedidos "ABERTO" do próprio usuário
+RN14	Enviar pedido exige pelo menos 1 item; ao enviar, o status muda para "ENVIADO"
+RN15	Listar pedidos: usuário vê apenas os seus; administrador pode ver todos
+RN16	Detalhes do pedido: acesso permitido apenas ao dono do pedido ou administrador
+RN17	Finalizar pedido só se o status for "ENVIADO"; após finalizar, não permite alterações e grava data/hora
+ 
+=== Requisitos Funcionais ===
+Identificador	Descrição	Regras de negócio vinculadas
+RF01	Criar usuário	RN01
+RF02	Criar senha	RN02
+RF03	Logar usuário	RN03
+RF04	Autentificar usuário	RN04
+RF05	Ver detalhes do usuário	RN05
+RF06	Cadastrar produto	RN06
+RF07	Listar produto por categoria	RN07
+RF08	Criar categoria	RN08
+RF09	Listar todas as categorias	RN09
+RF10	Criar pedido	RN10
+RF11	Deletar pedido	RN11
+RF12	Adicionar item ao pedido	RN12
+RF13	Remover item do pedido	RN13
+RF14	Enviar pedidos	RN14
+RF15	Listar pedidos	RN15
+RF16	Ver detalhes do pedido	RN16
+RF17	Finalizar pedido	RN17
+ 
+=== Requisitos Não Funcionais ===
+Identificador	Descrição
+RNF01	Mínimo de 8 caracteres e máximo de 13 caracteres
+RNF02	Senha mínima de 8 caracteres
+RNF03	Sistema responsivo (PC e celular)
+RNF04	Disponibilidade de 99% do tempo
+RNF05	Imagens de produtos com tamanho máximo de 2MB
+RNF06	Criptografia de senha no banco de dados
+RNF07	Mensagens de erro claras e objetivas
+RNF08	Compatibilidade com Google Chrome, Microsoft Edge e Firefox
+RNF09	Layout padronizado em todas as páginas
+RNF10	Pagamentos processados por conexão segura (HTTPS)
+RNF11	Confirmação visual ao enviar pedido
+RNF12	Banco de dados capaz de armazenar até 1000 pedidos por dia
+RNF13	Registro de ações dos administradores
+RNF14	Carregamento de imagens em até 1 segundo
